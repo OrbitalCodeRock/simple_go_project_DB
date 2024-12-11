@@ -35,6 +35,10 @@ dist/
 # GoLand and IntelliJ IDEA files
 .idea/
 
+# Go workspace file
+go.work
+go.work.sum
+
 # env files that usually contain secrets or local config
 .env
 .envrc

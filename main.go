@@ -1,15 +1,40 @@
 // package declaration
 package main
 
-import "fmt"
+// Imports (Modules and/or Packages)
+import (
+	"fmt"
+	"strings"
+)
 
-// Imports
-
-// Main function
+// Entry point
 func main() {
-	fmt.Println("Hello, World!")
+	var userAnswer string
+
+	fmt.Println("Hello... ")
+
+	// Collect user input up to the next \n (newline) character.
+	// & Gives us the memory address of userAnswer.
+	fmt.Scanln(&userAnswer)
+
+	switch strings.ToLower(userAnswer) {
+	case "world":
+		HandleRightAnswer(userAnswer)
+	case "world!":
+		HandleRightAnswer(userAnswer)
+	case "world.":
+		HandleRightAnswer(userAnswer)
+	default:
+		HandleWrongAnswer(userAnswer)
+	}
 }
 
-// HandleWrongAnswer function
+// Function for handling an incorrect answer.
+func HandleWrongAnswer(userAnswer string) {
+	fmt.Printf("Hello %.5s! That's... not quite what I was looking for!", userAnswer)
+}
 
-// HandleRightAnswer function
+// Function for handling a correct answer.
+func HandleRightAnswer(userAnswer string) {
+	fmt.Printf("Hello %.5s! That's correct!", userAnswer)
+}
